@@ -119,26 +119,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* ============================================================
-           DESIGN TOKENS
-        ============================================================ */
         :root {
-            /* === BLUE — primary brand accent === */
-            --navy:       #1D4ED8;   /* blue-700  */
-            --navy-deep:  #1E3A8A;   /* blue-900  — footer, dark sections */
-            --navy-light: #3B82F6;   /* blue-500  — hover states */
+            --navy:       #1D4ED8;  
+            --navy-deep:  #1E3A8A;   
+            --navy-light: #3B82F6;   
 
-            /* === YELLOW — highlight accent === */
-            --gold:       #F59E0B;   /* amber-500 */
-            --gold-light: #FCD34D;   /* amber-300 */
-            --gold-pale:  #FFFBEB;   /* amber-50  */
+            --gold:       #F59E0B;   
+            --gold-light: #FCD34D;  
+            --gold-pale:  #FFFBEB;   
 
-            /* === WHITE DOMINANT backgrounds === */
-            --cream:      #FFFFFF;            /* pure white base */
-            --off-white:  #F0F6FF;            /* very light blue-tinted white */
-            --border:     #DBEAFE;            /* blue-100 — subtle borders */
-            --text-dark:  #0F172A;            /* slate-900 */
-            --text-muted: #64748B;            /* slate-500 */
+            --cream:      #FFFFFF;       
+            --off-white:  #F0F6FF;           
+            --border:     #DBEAFE;         
+            --text-dark:  #0F172A;           
+            --text-muted: #64748B;     
             --white:      #FFFFFF;
 
             --ff-display: 'Cormorant Garamond', Georgia, serif;
@@ -153,9 +147,6 @@
         }
         
 
-        /* ============================================================
-           BASE
-        ============================================================ */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { 
         scroll-behavior: smooth; 
@@ -182,10 +173,6 @@
             font-family: var(--ff-body);
             font-weight: 700;
         }
-
-        /* ============================================================
-           UTILITY
-        ============================================================ */
         .section-label {
             display: inline-block;
             font-size: .72rem;
@@ -208,7 +195,6 @@
             max-width: 560px;
         }
 
-        /* Gold ornament */
         .ornament {
             display: flex; align-items: center; gap: 12px;
             margin-bottom: 14px;
@@ -220,9 +206,6 @@
         .ornament::after  { background: linear-gradient(to left, transparent, var(--gold-light)); }
         .ornament span { color: var(--gold); font-size: 1.1rem; }
 
-        /* ============================================================
-           BUTTONS
-        ============================================================ */
         .btn-gold {
             display: inline-flex; align-items: center; gap: 8px;
             background: var(--gold); color: var(--navy-deep);
@@ -272,9 +255,6 @@
             border-color: white;
         }
 
-        /* ============================================================
-           NAVBAR (sticky, transparent → white on scroll)
-        ============================================================ */
         #navbar {
             position: fixed; top: 0; left: 0; right: 0;
             z-index: 1050;
@@ -321,9 +301,6 @@
         .navbar-toggler i { font-size: 1.4rem; color: white; }
         #navbar.scrolled .navbar-toggler i { color: var(--navy); }
 
-        /* ============================================================
-           HERO
-        ============================================================ */
         .hero {
             min-height: 100vh;
             position: relative;
@@ -394,7 +371,6 @@
             margin-top: 5px; font-weight: 500;
         }
 
-        /* Hero Marquee */
         .hero-marquee {
             position: relative; z-index: 2;
             padding: 24px 0;
@@ -426,9 +402,6 @@
             100% { transform: translateX(calc(-50% - 8px)); }
         }
 
-        /* ============================================================
-           WHY US
-        ============================================================ */
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .feature-card {
             background: white; border-radius: var(--r-md);
@@ -449,9 +422,6 @@
         .feature-card h4 { font-size: 1rem; margin-bottom: 7px; color: var(--navy); }
         .feature-card p { font-size: .86rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
-        /* ============================================================
-           PACKAGES
-        ============================================================ */
         .package-card {
             background: white; border-radius: var(--r-lg);
             overflow: hidden; border: 1px solid var(--border);
@@ -514,9 +484,6 @@
         }
         .pkg-list li i { color: var(--gold); font-size: .85rem; margin-top: 2px; flex-shrink: 0; }
 
-        /* ============================================================
-           JADWAL KEBERANGKATAN
-        ============================================================ */
         .schedule-card {
             background: white; border-radius: var(--r-lg);
             border: 1px solid var(--border); overflow: hidden;
@@ -553,9 +520,6 @@
         .seat-limited { background: #fef3c7; color: #92400e; }
         .seat-full    { background: #fee2e2; color: #991b1b; }
 
-        /* ============================================================
-           CARA DAFTAR
-        ============================================================ */
         .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
         .step-grid::before {
             content: '';
@@ -583,9 +547,6 @@
         .step-card h4 { font-size: .97rem; margin-bottom: 8px; color: var(--navy); }
         .step-card p  { font-size: .83rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
-        /* ============================================================
-           ZIARAH
-        ============================================================ */
         .ziarah-card {
             border-radius: var(--r-lg); overflow: hidden;
             position: relative; height: 360px; cursor: pointer;
@@ -615,9 +576,6 @@
         }
         .ziarah-card:hover .ziarah-desc { max-height: 80px; }
 
-        /* ============================================================
-           TESTIMONI
-        ============================================================ */
         .testi-card {
             background: white; border-radius: var(--r-lg);
             padding: 30px; border: 1px solid var(--border);
@@ -645,9 +603,6 @@
         .testi-name { font-weight: 700; font-size: .92rem; color: var(--navy); margin-bottom: 2px; }
         .testi-pkg  { font-size: .77rem; color: var(--text-muted); }
 
-        /* ============================================================
-           FAQ
-        ============================================================ */
         .accordion-item {
             border: 1px solid var(--border) !important;
             border-radius: var(--r-sm) !important;
@@ -665,9 +620,6 @@
             background: var(--off-white);
         }
 
-        /* ============================================================
-           CTA SECTION
-        ============================================================ */
         .cta-section {
             background: var(--navy);
             position: relative; overflow: hidden; padding: 100px 0;
@@ -702,9 +654,6 @@
             letter-spacing: .1em; text-transform: uppercase; margin-top: 5px;
         }
 
-        /* ============================================================
-           FOOTER
-        ============================================================ */
         .footer {
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
             color: #94a3b8; padding: 80px 0 32px;
@@ -748,9 +697,6 @@
         .social-link:hover { background: var(--gold); color: var(--navy-deep); transform: translateY(-2px); }
         hr.footer-line { border-color: rgba(255,255,255,.08); margin: 40px 0 24px; }
 
-        /* ============================================================
-           FLOATING WA
-        ============================================================ */
         .wa-float {
             position: fixed; bottom: 28px; right: 24px;
             background: #25D366; color: white;
@@ -762,19 +708,12 @@
         }
         .wa-float:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37,211,102,.5); color: white; }
         .wa-float i { font-size: 1.15rem; }
-
-        /* ============================================================
-           FADE UP ANIMATIONS
-        ============================================================ */
         .fade-up {
             opacity: 0; transform: translateY(28px);
             transition: opacity .65s ease, transform .65s ease;
         }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* ============================================================
-           RESPONSIVE
-        ============================================================ */
         @media (max-width: 991px) {
             section { padding: 70px 0; }
             .nav-inner { padding: 0 20px; }
@@ -819,9 +758,6 @@
             .schedule-row { grid-template-columns: 1fr 1fr; }
         }
 
-        /* ============================================================
-   GLOBAL FIX
-============================================================ */
 html,
 body {
     overflow-x: hidden;
@@ -838,9 +774,6 @@ img {
     height: auto;
 }
 
-/* ============================================================
-   TOP BAR
-============================================================ */
 .top-bar {
     position: fixed;
     top: 0;
@@ -882,9 +815,6 @@ img {
     color: var(--gold-light);
 }
 
-/* ============================================================
-   NAVBAR
-============================================================ */
 #navbar {
     top: 42px !important;
 }
@@ -913,16 +843,10 @@ img {
     }
 }
 
-/* ============================================================
-   HERO FIX
-============================================================ */
 .hero-content {
     padding-top: 180px;
 }
 
-/* ============================================================
-   ABOUT SECTION
-============================================================ */
 .about-image-wrap {
     position: relative;
 }
@@ -960,9 +884,6 @@ img {
     line-height: 1.7;
 }
 
-/* ============================================================
-   MOBILE
-============================================================ */
 @media (max-width: 991px) {
 
     .top-bar {
@@ -1026,9 +947,6 @@ img {
     </style>
 </head>
 <body>
-    <!-- ================================================================
-     TOP BAR
-================================================================ -->
 <div class="top-bar">
     <div class="container-fluid">
         <div class="top-bar-inner">
@@ -1060,9 +978,6 @@ img {
     </div>
 </div>
     
-<!-- ================================================================
-     NAVBAR
-================================================================ -->
 <nav id="navbar" aria-label="Navigasi utama">
 
     <div class="nav-inner">
@@ -1112,9 +1027,6 @@ img {
 
 </nav>
 
-<!-- ================================================================
-     HERO
-================================================================ -->
 <header class="hero" role="banner">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-pattern" aria-hidden="true"></div>
@@ -1161,12 +1073,9 @@ img {
             </div>
         </div>
     </div>
-
-    <!-- Marquee Foto -->
     <div class="hero-marquee" aria-hidden="true">
         <div class="marquee-mask">
             <div class="marquee-track">
-                <!-- SET 1 -->
                 <img src="/images/haji1.webp" alt="Foto Jamaah Umroh" class="marquee-img" loading="lazy" width="185" height="260">
                 <img src="/images/haji2.webp" alt="Foto Jamaah Umroh" class="marquee-img" loading="lazy" width="185" height="260">
                 <img src="/images/haji3.webp" alt="Foto Jamaah Umroh" class="marquee-img" loading="lazy" width="185" height="260">
@@ -1180,7 +1089,6 @@ img {
                 <img src="/images/Umroh5.webp" alt="Foto Jamaah Umroh" class="marquee-img" loading="lazy" width="185" height="260">
 
 
-                <!-- SET 2 (duplikat untuk looping) -->
                 <img src="/images/haji1.webp" alt="Foto Jamaah Umroh" class="marquee-img" loading="lazy" width="185" height="260">
                 <img src="/images/haji2.webp" alt="Foto Jamaah Umroh" class="marquee-img" loading="lazy" width="185" height="260">
                 <img src="/images/haji3.webp" alt="Foto Jamaah Umroh" class="marquee-img" loading="lazy" width="185" height="260">
@@ -1199,9 +1107,6 @@ img {
 
 
 
-<!-- ================================================================
-     WHY US / KEUNGGULAN
-================================================================ -->
 <section id="keunggulan" aria-labelledby="keunggulan-title">
     <div class="container">
         <div class="row align-items-center g-5">
@@ -1246,9 +1151,6 @@ img {
     </div>
 </section>
 
-<!-- ================================================================
-     PAKET UMROH & HAJI
-================================================================ -->
 <section id="paket" class="bg-offwhite" aria-labelledby="paket-title" style="background:var(--off-white)">
     <div class="container">
         <div class="text-center mb-5 fade-up">
@@ -1257,8 +1159,7 @@ img {
             <p class="section-sub mx-auto text-center">Harga transparan, <strong>All-In tanpa biaya tersembunyi</strong>. Amankan kursi Anda untuk jadwal keberangkatan terdekat.</p>
         </div>
         <div class="row g-4 justify-content-center">
-
-            <!-- Paket 1: Ekonomis -->
+]
             <div class="col-lg-4 col-md-6 fade-up">
                 <article class="package-card" itemscope itemtype="https://schema.org/Offer">
                     <div class="pkg-img-wrap">
@@ -1289,8 +1190,6 @@ img {
                     </div>
                 </article>
             </div>
-
-            <!-- Paket 2: Plus Turkiye (FEATURED) -->
             <div class="col-lg-4 col-md-6 fade-up">
                 <article class="package-card featured" itemscope itemtype="https://schema.org/Offer">
                     <div class="pkg-ribbon" aria-label="Paket terlaris">TERLARIS</div>
@@ -1322,8 +1221,6 @@ img {
                     </div>
                 </article>
             </div>
-
-            <!-- Paket 3: Haji Khusus -->
             <div class="col-lg-4 col-md-6 fade-up">
                 <article class="package-card" itemscope itemtype="https://schema.org/Offer">
                     <div class="pkg-img-wrap">
@@ -1363,9 +1260,6 @@ img {
     </div>
 </section>
 
-<!-- ================================================================
-     TENTANG KAMI
-================================================================ -->
 <section id="tentang-kami">
 
     <div class="container">
@@ -1492,9 +1386,6 @@ img {
 </section>
 
 
-<!-- ================================================================
-     CARA DAFTAR  [NEW SECTION]
-================================================================ -->
 <section style="background:var(--off-white)" aria-labelledby="cara-daftar-title">
     <div class="container">
         <div class="text-center mb-5 fade-up">
@@ -1533,9 +1424,6 @@ img {
     </div>
 </section>
 
-<!-- ================================================================
-     BONUS ZIARAH
-================================================================ -->
 <section aria-labelledby="ziarah-title">
     <div class="container">
         <div class="text-center mb-5 fade-up">
@@ -1581,9 +1469,6 @@ img {
     </div>
 </section>
 
-<!-- ================================================================
-     TESTIMONI
-================================================================ -->
 <section id="testimoni" style="background:var(--off-white)" aria-labelledby="testimoni-title">
     <div class="container">
         <div class="text-center mb-5 fade-up">
@@ -1597,9 +1482,6 @@ img {
     </div>
 </section>
 
-<!-- ================================================================
-     FAQ
-================================================================ -->
 <section id="faq" aria-labelledby="faq-title">
     <div class="container">
         <div class="row justify-content-center">
@@ -1686,9 +1568,6 @@ img {
 </section>
 
 
-<!-- ================================================================
-     FOOTER
-================================================================ -->
 <footer class="footer" role="contentinfo">
     <div class="container">
         <div class="row g-5">
@@ -1754,26 +1633,21 @@ img {
         </div>
     </div>
 </footer>
-
-<!-- Floating WhatsApp Button -->
+]
 <a href="https://wa.me/6281319554103" class="wa-float"
    rel="noopener noreferrer" target="_blank"
    aria-label="Hubungi kami via WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
     <span class="wa-label">Hubungi Kami</span>
 </a>
-
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // ── Sticky Navbar ──────────────────────────────────────────────
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // ── Intersection Observer – fade-up ────────────────────────────
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (e.isIntersecting) {
@@ -1784,7 +1658,6 @@ img {
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // ── Countdown Timer (target: 3 Juli 2026) ──────────────────────
     const target = new Date('2026-07-03T00:00:00');
     function updateCountdown() {
         const diff = target - Date.now();
