@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 – Halaman Tidak Ditemukan | FAST UMROH</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ── TOKENS ── */
+        :root {
+            --navy:        #1D4ED8;
+            --navy-deep:   #1E3A8A;
+            --navy-light:  #3B82F6;
+            --gold:        #F59E0B;
+            --gold-light:  #FCD34D;
+            --gold-pale:   #FFFBEB;
+            --off-white:   #F0F6FF;
+            --border:      #DBEAFE;
+            --text-dark:   #0F172A;
+            --text-muted:  #64748B;
+            --ff-display:  'Cormorant Garamond', Georgia, serif;
+            --ff-body:     'Outfit', system-ui, sans-serif;
+            --shadow-gold: 0 8px 28px rgba(245,158,11,.32);
+            --shadow-md:   0 8px 28px rgba(29,78,216,.12);
+            --shadow-lg:   0 24px 60px rgba(29,78,216,.16);
+        }
+
+        /* ── RESET ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; overflow-x: hidden; }
+        body {
+            font-family: var(--ff-body);
+            background: var(--navy-deep);
+            color: white;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* ── TOP BAR ── */
+        .top-bar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1200;
+            height: 42px; background: rgba(15,23,42,.9);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            display: flex; align-items: center;
+            backdrop-filter: blur(12px);
+        }
+        .top-bar-inner { padding: 0 40px; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .top-left, .top-right { display: flex; align-items: center; gap: 20px; }
+        .top-bar span { color: rgba(255,255,255,.6); font-size: .75rem; display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+        .top-bar i { color: var(--gold-light); }
+
+        /* ── NAVBAR ── */
+        #navbar {
+            position: fixed; top: 42px; left: 0; right: 0; z-index: 1050;
+            padding: 18px 0;
+            background: rgba(15,23,42,.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .brand-icon { max-width: 72px; max-height: 72px; display: flex; align-items: center; justify-content: center; }
+        .nav-links { display: flex; gap: 26px; align-items: center; }
+        .nav-links a { font-size: .87rem; font-weight: 600; color: rgba(255,255,255,.65); text-decoration: none; transition: color .25s; }
+        .nav-links a:hover { color: var(--gold-light); }
+        .btn-gold-sm {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: var(--gold); color: var(--navy-deep);
+            padding: 10px 22px; border-radius: 50px;
+            font-family: var(--ff-body); font-weight: 700; font-size: .85rem;
+            text-decoration: none; transition: all .3s;
+        }
+        .btn-gold-sm:hover { background: var(--gold-light); color: var(--navy-deep); transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+        .navbar-toggler { background: none; border: none; padding: 6px; cursor: pointer; }
+        .navbar-toggler i { font-size: 1.3rem; color: rgba(255,255,255,.8); }
+
+        @media (min-width: 992px) { .navbar-toggler { display: none; } #navbarMenu { display: flex !important; align-items: center; gap: 32px; } }
+
+        /* ── FULL‑PAGE SCENE ── */
+        .scene {
+            min-height: 100vh;
+            padding-top: 110px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            background: linear-gradient(160deg, #0f1e4a 0%, #1e3a8a 45%, #1d4ed8 100%);
+        }
+
+        /* Stars canvas */
+        #stars-canvas {
+            position: absolute; inset: 0;
+            pointer-events: none; z-index: 0;
+        }
+
+        /* Desert ground */
+        .desert {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 180px; z-index: 1;
+        }
+
+        /* Crescent moon */
+        .crescent {
+            position: absolute; top: 120px; right: 12%;
+            width: 90px; height: 90px;
+            animation: float-slow 8s ease-in-out infinite;
+            z-index: 1; filter: drop-shadow(0 0 18px rgba(252,211,77,.45));
+        }
+
+        /* Kaaba Silhouette */
+        .kaaba-wrap {
+            position: relative; z-index: 2;
+            animation: float-gentle 6s ease-in-out infinite;
+            margin-bottom: -8px;
+        }
+
+        /* ── 404 NUMBER ── */
+        .giant-404 {
+            position: relative; z-index: 3;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        .num-404 {
+            font-family: var(--ff-display);
+            font-size: clamp(8rem, 20vw, 18rem);
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(255,255,255,.12);
+            background: linear-gradient(135deg, rgba(255,255,255,.07) 0%, rgba(29,78,216,.0) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            letter-spacing: -.04em;
+            user-select: none;
+            pointer-events: none;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            z-index: 0;
+        }
+
+        /* ── CONTENT CARD ── */
+        .content-card {
+            position: relative; z-index: 4;
+            text-align: center;
+            max-width: 600px;
+            padding: 0 24px;
+        }
+        .error-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(245,158,11,.15);
+            border: 1px solid rgba(245,158,11,.3);
+            color: var(--gold-light); font-size: .75rem; font-weight: 700;
+            letter-spacing: .18em; text-transform: uppercase;
+            padding: 7px 18px; border-radius: 50px; margin-bottom: 24px;
+        }
+        .error-badge .dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: pulse 1.8s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+
+        .headline {
+            font-family: var(--ff-display);
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            color: white; line-height: 1.12;
+            font-weight: 700; margin-bottom: 16px;
+        }
+        .headline em { color: var(--gold-light); font-style: italic; }
+
+        .subline {
+            font-size: 1rem; color: rgba(255,255,255,.62);
+            line-height: 1.8; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto;
+        }
+
+        /* ── CTA BUTTONS ── */
+        .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px; }
+        .btn-404-primary {
+            display: inline-flex; align-items: center; gap: 9px;
+            background: var(--gold); color: var(--navy-deep);
+            padding: 15px 34px; border-radius: 50px;
+            font-family: var(--ff-body); font-weight: 700; font-size: .95rem;
+            text-decoration: none; transition: all .3s;
+            box-shadow: var(--shadow-gold);
+        }
+        .btn-404-primary:hover { background: var(--gold-light); color: var(--navy-deep); transform: translateY(-3px); box-shadow: 0 14px 36px rgba(245,158,11,.45); }
+        .btn-404-ghost {
+            display: inline-flex; align-items: center; gap: 9px;
+            background: rgba(255,255,255,.08); color: white;
+            border: 1px solid rgba(255,255,255,.18);
+            padding: 14px 28px; border-radius: 50px;
+            font-family: var(--ff-body); font-weight: 600; font-size: .9rem;
+            text-decoration: none; transition: all .3s; backdrop-filter: blur(8px);
+        }
+        .btn-404-ghost:hover { background: rgba(255,255,255,.15); color: white; transform: translateY(-3px); border-color: rgba(255,255,255,.35); }
+
+        /* ── QUICK LINKS ── */
+        .quick-links-label {
+            font-size: .72rem; font-weight: 700; letter-spacing: .18em;
+            text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px;
+        }
+        .quick-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .quick-link {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+            color: rgba(255,255,255,.7); padding: 9px 18px; border-radius: 50px;
+            font-size: .83rem; font-weight: 500; text-decoration: none;
+            transition: all .25s; backdrop-filter: blur(6px);
+        }
+        .quick-link:hover { background: rgba(255,255,255,.12); color: white; border-color: rgba(255,255,255,.25); transform: translateY(-2px); }
+        .quick-link i { font-size: .82rem; color: var(--gold-light); }
+
+        /* ── SEARCH BOX ── */
+        .search-wrap { position: relative; max-width: 420px; margin: 0 auto 0; margin-top: 44px; }
+        .search-input {
+            width: 100%; padding: 14px 56px 14px 20px;
+            background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+            border-radius: 50px; color: white; font-family: var(--ff-body);
+            font-size: .9rem; outline: none; backdrop-filter: blur(8px);
+            transition: all .3s;
+        }
+        .search-input::placeholder { color: rgba(255,255,255,.35); }
+        .search-input:focus { background: rgba(255,255,255,.12); border-color: rgba(245,158,11,.5); box-shadow: 0 0 0 3px rgba(245,158,11,.12); }
+        .search-btn {
+            position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+            width: 38px; height: 38px; background: var(--gold); color: var(--navy-deep);
+            border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: .85rem; cursor: pointer; transition: all .25s;
+        }
+        .search-btn:hover { background: var(--gold-light); transform: translateY(-50%) scale(1.08); }
+
+        /* ── FOOTER MINI ── */
+        .footer-mini {
+            background: rgba(15,23,42,.6);
+            border-top: 1px solid rgba(255,255,255,.06);
+            padding: 20px 0;
+            text-align: center;
+            position: relative; z-index: 10;
+            backdrop-filter: blur(12px);
+        }
+        .footer-mini p { font-size: .8rem; color: rgba(255,255,255,.35); margin: 0; }
+        .footer-mini a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+        .footer-mini a:hover { color: var(--gold-light); }
+
+        /* ── FLOATING WA ── */
+        .wa-float {
+            position: fixed; bottom: 28px; right: 24px; z-index: 1100;
+            background: #25D366; color: white; border-radius: 50px; padding: 14px 22px;
+            font-weight: 700; font-size: .88rem; text-decoration: none;
+            display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 8px 24px rgba(37,211,102,.5);
+            transition: all .3s;
+        }
+        .wa-float:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37,211,102,.6); color: white; }
+
+        /* ── ANIMATIONS ── */
+        @keyframes float-gentle { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+        @keyframes float-slow   { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-10px) rotate(2deg)} }
+        @keyframes fade-in-up   { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes glow-pulse   { 0%,100%{filter:drop-shadow(0 0 12px rgba(245,158,11,.4))} 50%{filter:drop-shadow(0 0 28px rgba(245,158,11,.7))} }
+
+        .scene > * { animation: fade-in-up .8s ease both; }
+        .scene > *:nth-child(2) { animation-delay: .1s; }
+        .scene > *:nth-child(3) { animation-delay: .2s; }
+        .scene > *:nth-child(4) { animation-delay: .3s; }
+        .content-card { animation: fade-in-up .9s .25s ease both; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 991px) {
+            .top-bar-inner { flex-direction: column; gap: 6px; height: auto; padding: 8px 18px; }
+            .top-left,.top-right { justify-content: center; flex-wrap: wrap; gap: 10px; }
+            #navbar { top: 66px; }
+            .scene { padding-top: 160px; }
+            #navbarMenu { position: absolute; top: 100%; left: 16px; right: 16px; background: rgba(15,23,42,.96); border-radius: 16px; padding: 20px; box-shadow: var(--shadow-lg); }
+            .nav-links { flex-direction: column; gap: 0; width: 100%; }
+            .nav-links a { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: block; color: rgba(255,255,255,.75); }
+        }
+        @media (max-width: 767px) {
+            .top-bar { display: none; }
+            #navbar { top: 0; }
+            .scene { padding-top: 100px; }
+            .wa-float .wa-label { display: none; }
+            .wa-float { border-radius: 50%; padding: 16px; }
+            .desert { height: 100px; }
+            .kaaba-wrap svg { width: 180px; height: auto; }
+        }
+        @media (max-width: 480px) {
+            .crescent { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="top-bar">
+    <div class="container-fluid">
+        <div class="top-bar-inner">
+            <div class="top-left">
+                <span><i class="fas fa-phone-alt"></i> +62 813-1955-4103</span>
+                <span><i class="fas fa-envelope"></i> fajwarihlahsunnah@gmail.com</span>
+            </div>
+            <div class="top-right">
+                <span><i class="fas fa-clock"></i> Senin – Sabtu : 08.00 – 21.00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ── MAIN SCENE ── -->
+<main class="scene" role="main">
+
+    <!-- Particle canvas -->
+    <canvas id="stars-canvas" aria-hidden="true"></canvas>
+
+    <!-- Ghost 404 behind everything -->
+    <div class="num-404" aria-hidden="true">404</div>
+
+    <!-- Crescent Moon SVG -->
+    <svg class="crescent" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M72 45C72 60 60 72 45 72C30 72 18 60 18 45C18 30 30 18 45 18C38 25 36 35 40 44C44 53 53 58 63 56C68 51 72 48 72 45Z" fill="#FCD34D" opacity=".9"/>
+        <circle cx="66" cy="26" r="4" fill="#FCD34D" opacity=".6"/>
+        <circle cx="75" cy="38" r="2.5" fill="#FCD34D" opacity=".4"/>
+    </svg>
+
+    <!-- Kaaba Silhouette -->
+    <div class="kaaba-wrap" aria-hidden="true">
+        <svg width="240" height="220" viewBox="0 0 240 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Glow aura -->
+            <ellipse cx="120" cy="210" rx="90" ry="14" fill="rgba(245,158,11,.18)"/>
+            <!-- Main cube – left face -->
+            <polygon points="40,60 40,180 120,200 120,80" fill="#0f172a"/>
+            <!-- Main cube – right face -->
+            <polygon points="200,60 200,180 120,200 120,80" fill="#1e293b"/>
+            <!-- Main cube – top face -->
+            <polygon points="40,60 120,30 200,60 120,80" fill="#1e3a8a"/>
+            <!-- Gold border top -->
+            <polygon points="40,60 120,30 200,60 120,80" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-opacity=".6"/>
+            <!-- Gold Kiswah band -->
+            <polygon points="40,90 120,70 200,90 200,120 120,100 40,120" fill="rgba(245,158,11,.12)" stroke="#F59E0B" stroke-width="1" stroke-opacity=".4"/>
+            <!-- Gold calligraphy hint -->
+            <text x="90" y="108" font-size="10" fill="rgba(252,211,77,.5)" font-family="serif">بِسْمِ اللّٰهِ</text>
+            <!-- Door (left face) -->
+            <rect x="68" y="128" width="26" height="52" rx="2" fill="#1e3a8a" stroke="#F59E0B" stroke-width="1" stroke-opacity=".5"/>
+            <rect x="72" y="132" width="18" height="44" rx="1" fill="rgba(245,158,11,.08)"/>
+            <!-- Door frame lines -->
+            <line x1="81" y1="132" x2="81" y2="176" stroke="rgba(245,158,11,.3)" stroke-width=".8"/>
+            <!-- Corner pillars -->
+            <line x1="40" y1="60" x2="40" y2="180" stroke="#F59E0B" stroke-width="1" stroke-opacity=".25"/>
+            <line x1="200" y1="60" x2="200" y2="180" stroke="#F59E0B" stroke-width="1" stroke-opacity=".25"/>
+            <line x1="120" y1="80" x2="120" y2="200" stroke="#F59E0B" stroke-width="1" stroke-opacity=".2"/>
+            <!-- Circular tawaf ring -->
+            <ellipse cx="120" cy="196" rx="104" ry="18" fill="none" stroke="rgba(245,158,11,.15)" stroke-width="1" stroke-dasharray="4 3"/>
+            <ellipse cx="120" cy="196" rx="118" ry="20" fill="none" stroke="rgba(245,158,11,.08)" stroke-width="1" stroke-dasharray="3 5"/>
+            <!-- Tiny people doing tawaf -->
+            <g fill="rgba(255,255,255,.25)">
+                <circle cx="28"  cy="194" r="3"/>
+                <circle cx="50"  cy="203" r="3"/>
+                <circle cx="80"  cy="210" r="3"/>
+                <circle cx="120" cy="213" r="3"/>
+                <circle cx="160" cy="210" r="3"/>
+                <circle cx="192" cy="203" r="3"/>
+                <circle cx="213" cy="194" r="3"/>
+                <circle cx="202" cy="183" r="2.5"/>
+                <circle cx="38"  cy="183" r="2.5"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Main content -->
+    <div class="content-card">
+        <div class="error-badge">
+            <span class="dot" aria-hidden="true"></span>
+            Error 404 — Halaman Tidak Ditemukan
+        </div>
+
+        <h1 class="headline">
+            Halaman ini Sedang<br>
+            <em>Menunaikan Umroh…</em>
+        </h1>
+
+        <p class="subline">
+            Seperti jamaah yang tersesat di pasar Mekah, halaman yang Anda cari
+            tidak berada di sini. Mungkin URL-nya salah, atau halaman telah dipindahkan.
+            Jangan khawatir — kami siap mengantar Anda kembali ke jalur yang benar.
+        </p>
+
+        <div class="cta-group">
+            <a href="/" class="btn-404-primary">
+                <i class="fas fa-home"></i> Kembali ke Beranda
+            </a>
+            <a href="https://wa.me/6281319554103" class="btn-404-ghost" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Minta Bantuan
+            </a>
+        </div>
+
+        <div class="quick-links-label">Atau, pergi langsung ke:</div>
+        <div class="quick-links">
+            <a href="/#paket" class="quick-link">
+                <i class="fas fa-kaaba"></i> Paket Umroh
+            </a>
+            <a href="/paket-umroh.html" class="quick-link">
+                <i class="fas fa-list-alt"></i> Detail Paket
+            </a>
+            <a href="/tentang-kami.html" class="quick-link">
+                <i class="fas fa-building"></i> Tentang Kami
+            </a>
+            <a href="/#testimoni" class="quick-link">
+                <i class="fas fa-star"></i> Testimoni
+            </a>
+            <a href="/#faq" class="quick-link">
+                <i class="fas fa-question-circle"></i> FAQ
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Desert / sand ground -->
+    <svg class="desert" viewBox="0 0 1440 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Back dunes -->
+        <path d="M0 140 Q120 80 260 130 Q400 175 550 120 Q700 70 860 130 Q1010 185 1160 125 Q1300 70 1440 120 L1440 180 L0 180 Z"
+              fill="rgba(30,58,138,.5)"/>
+        <!-- Front dunes -->
+        <path d="M0 158 Q100 120 220 150 Q340 178 480 145 Q600 115 730 152 Q860 185 1000 148 Q1140 115 1280 150 Q1370 170 1440 155 L1440 180 L0 180 Z"
+              fill="rgba(15,23,42,.8)"/>
+        <!-- Sand glimmer -->
+        <path d="M0 170 Q200 155 400 168 Q600 180 800 165 Q1000 152 1200 168 Q1350 178 1440 168 L1440 180 L0 180 Z"
+              fill="rgba(245,158,11,.06)"/>
+        <!-- Ground -->
+        <rect x="0" y="174" width="1440" height="6" fill="rgba(245,158,11,.08)"/>
+    </svg>
+
+</main>
+
+<!-- Floating WA -->
+<a href="https://wa.me/6281319554103" class="wa-float"
+   rel="noopener noreferrer" target="_blank" aria-label="Chat via WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-label">Hubungi Kami</span>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ── STARS / PARTICLES ── */
+(function () {
+    const canvas = document.getElementById('stars-canvas');
+    const ctx    = canvas.getContext('2d');
+    let W, H, stars = [], shootingStars = [];
+
+    function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Static stars
+    for (let i = 0; i < 180; i++) {
+        stars.push({
+            x: Math.random(), y: Math.random(),
+            r: Math.random() * 1.6 + 0.2,
+            a: Math.random(),
+            speed: Math.random() * 0.008 + 0.002,
+            dir: Math.random() > .5 ? 1 : -1
+        });
+    }
+
+    // Shooting star factory
+    function newShooter() {
+        return {
+            x: Math.random() * W * .7 + W * .1,
+            y: Math.random() * H * .3,
+            len: Math.random() * 120 + 60,
+            speed: Math.random() * 6 + 4,
+            angle: Math.PI / 5,
+            a: 1, fade: 0.02
+        };
+    }
+    // Spawn shooter every 3-5s
+    setInterval(() => {
+        if (shootingStars.length < 3) shootingStars.push(newShooter());
+    }, 3500);
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        // Static stars
+        stars.forEach(s => {
+            s.a += s.speed * s.dir;
+            if (s.a >= 1 || s.a <= .1) s.dir *= -1;
+            ctx.beginPath();
+            ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255,255,255,${s.a.toFixed(2)})`;
+            ctx.fill();
+        });
+
+        // Shooting stars
+        shootingStars = shootingStars.filter(s => s.a > 0);
+        shootingStars.forEach(s => {
+            const dx = Math.cos(s.angle) * s.len;
+            const dy = Math.sin(s.angle) * s.len;
+            const grad = ctx.createLinearGradient(s.x, s.y, s.x - dx, s.y - dy);
+            grad.addColorStop(0, `rgba(252,211,77,${s.a})`);
+            grad.addColorStop(1, 'rgba(252,211,77,0)');
+            ctx.beginPath();
+            ctx.moveTo(s.x, s.y);
+            ctx.lineTo(s.x - dx, s.y - dy);
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            s.x += Math.cos(s.angle) * s.speed;
+            s.y += Math.sin(s.angle) * s.speed;
+            s.a -= s.fade;
+        });
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+/* ── SEARCH REDIRECT ── */
+const searchInput = document.getElementById('searchInput');
+const searchBtn   = document.getElementById('searchBtn');
+
+function doSearch() {
+    const q = searchInput.value.trim().toLowerCase();
+    if (!q) return;
+    const map = {
+        'paket':      '/#paket',
+        'umroh':      '/detail-paket.html',
+        'haji':       '/detail-paket.html#paket-haji-khusus',
+        'ekonomis':   '/detail-paket.html#paket-ekonomis',
+        'turkiye':    '/detail-paket.html#paket-plus-turkiye',
+        'turkey':     '/detail-paket.html#paket-plus-turkiye',
+        'tentang':    '/tentang-kami.html',
+        'profil':     '/tentang-kami.html#profil',
+        'legalitas':  '/tentang-kami.html#legalitas',
+        'testimoni':  '/tentang-kami.html#testimoni',
+        'faq':        '/tentang-kami.html#faq',
+        'tim':        '/tentang-kami.html#tim',
+        'whatsapp':   'https://wa.me/6281319554103',
+        'wa':         'https://wa.me/6281319554103',
+        'daftar':     'https://wa.me/6281319554103',
+        'beranda':    '/',
+        'home':       '/',
+    };
+    for (const [key, url] of Object.entries(map)) {
+        if (q.includes(key)) { window.location.href = url; return; }
+    }
+    // fallback — just go home
+    window.location.href = '/?s=' + encodeURIComponent(q);
+}
+
+searchBtn.addEventListener('click', doSearch);
+searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+</script>
+</body>
+</html>
