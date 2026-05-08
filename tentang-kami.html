@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | FAST UMROH – Biro Umroh & Haji Resmi Kemenag RI</title>
+    <meta name="description" content="Kenali FAST UMROH lebih dalam – profil perusahaan, legalitas resmi Kemenag RI, nilai-nilai kami, tim pembimbing berpengalaman, testimoni jamaah, dan FAQ lengkap.">
+    <link rel="canonical" href="https://fast-umroh.com/tentang-kami">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ============================================================
+           DESIGN TOKENS
+        ============================================================ */
+        :root {
+            --navy:       #1D4ED8;
+            --navy-deep:  #1E3A8A;
+            --navy-light: #3B82F6;
+            --gold:       #F59E0B;
+            --gold-light: #FCD34D;
+            --gold-pale:  #FFFBEB;
+            --cream:      #FFFFFF;
+            --off-white:  #F0F6FF;
+            --border:     #DBEAFE;
+            --text-dark:  #0F172A;
+            --text-muted: #64748B;
+            --white:      #FFFFFF;
+            --ff-display: 'Cormorant Garamond', Georgia, serif;
+            --ff-body:    'Outfit', system-ui, sans-serif;
+            --shadow-sm:  0 2px 8px rgba(29,78,216,.06);
+            --shadow-md:  0 8px 28px rgba(29,78,216,.10);
+            --shadow-lg:  0 24px 60px rgba(29,78,216,.14);
+            --shadow-gold:0 8px 28px rgba(245,158,11,.28);
+            --r-sm: 8px; --r-md: 16px; --r-lg: 24px;
+        }
+
+        /* BASE */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+        body { font-family: var(--ff-body); background: var(--cream); color: var(--text-dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        section { padding: 96px 0; }
+        h1,h2,h3 { font-family: var(--ff-display); font-weight: 600; letter-spacing: -.02em; }
+        h4,h5,h6 { font-family: var(--ff-body); font-weight: 700; }
+        html, body { overflow-x: hidden; width: 100%; }
+        .row { margin-left: 0; margin-right: 0; }
+
+        /* UTILITY */
+        .section-label { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); color: var(--navy); line-height: 1.12; margin-bottom: 16px; }
+        .section-sub { font-size: 1.02rem; color: var(--text-muted); line-height: 1.75; max-width: 560px; }
+        .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ORNAMENT */
+        .ornament { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; }
+        .ornament::before { background: linear-gradient(to right, transparent, var(--gold-light)); }
+        .ornament::after  { background: linear-gradient(to left,  transparent, var(--gold-light)); }
+        .ornament span { color: var(--gold); font-size: 1.1rem; }
+
+        /* BUTTONS */
+        .btn-gold { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-deep); padding: 14px 32px; border-radius: 50px; font-family: var(--ff-body); font-weight: 700; font-size: .92rem; text-decoration: none; border: none; transition: all .3s ease; }
+        .btn-gold:hover { background: var(--gold-light); color: var(--navy-deep); transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+        .btn-navy { display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: white; padding: 14px 32px; border-radius: 50px; font-family: var(--ff-body); font-weight: 700; font-size: .92rem; text-decoration: none; border: none; transition: all .3s ease; }
+        .btn-navy:hover { background: var(--navy-light); color: white; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline-gold { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 30px; border-radius: 50px; font-family: var(--ff-body); font-weight: 700; font-size: .92rem; text-decoration: none; transition: all .3s ease; }
+        .btn-outline-gold:hover { background: var(--gold); color: var(--navy-deep); transform: translateY(-2px); }
+        .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; border: 2px solid rgba(255,255,255,.55); padding: 12px 28px; border-radius: 50px; font-family: var(--ff-body); font-weight: 600; font-size: .9rem; text-decoration: none; transition: all .3s ease; }
+        .btn-outline-white:hover { background: white; color: var(--navy); border-color: white; }
+
+        /* ============================================================
+           TOP BAR (Identik paket-umroh.html)
+        ============================================================ */
+        .top-bar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1200; height: 42px;
+            background: var(--navy-deep); border-bottom: 1px solid rgba(255,255,255,.08);
+            display: flex; align-items: center;
+        }
+        .top-bar-inner {
+            height: 42px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; width: 100%;
+        }
+        .top-left, .top-right { display: flex; align-items: center; gap: 20px; }
+        .top-bar span {
+            color: rgba(255,255,255,.78); font-size: .76rem;
+            display: flex; align-items: center; gap: 8px; white-space: nowrap;
+        }
+        .top-bar i { color: var(--gold-light); }
+
+        /* ============================================================
+           NAVBAR (Identik paket-umroh.html)
+        ============================================================ */
+        #navbar {
+            position: fixed; top: 42px !important; left: 0; right: 0;
+            z-index: 1050; padding: 22px 0;
+            transition: background .4s, padding .4s, box-shadow .4s;
+        }
+        #navbar.scrolled {
+            background: rgba(255,255,255,.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            padding: 12px 0; box-shadow: 0 2px 20px rgba(29,78,216,.08);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 40px; width: 100%; }
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .brand-icon {
+            max-width: 80px; max-height: 80px; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--navy-deep); font-size: 1rem; flex-shrink: 0;
+        }
+        #navbar.scrolled .brand-name { color: var(--navy); }
+
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a {
+            font-size: .88rem; font-weight: 600; color: rgba(255,255,255,.85);
+            text-decoration: none; transition: color .3s;
+        }
+        .nav-links a:hover { color: var(--gold-light); }
+        .nav-links a.active { color: var(--gold); }
+        #navbar.scrolled .nav-links a { color: var(--text-muted); }
+        #navbar.scrolled .nav-links a:hover, #navbar.scrolled .nav-links a.active { color: var(--navy); }
+
+        .navbar-toggler { background: none; border: none; padding: 6px; cursor: pointer; }
+        .navbar-toggler i { font-size: 1.4rem; color: white; }
+        #navbar.scrolled .navbar-toggler i { color: var(--navy); }
+
+        @media (min-width: 992px) {
+            .navbar-toggler { display: none; }
+            #navbarMenu { display: flex !important; align-items: center; justify-content: flex-end; flex-grow: 1; }
+            .nav-links { display: flex; flex-direction: row; align-items: center; }
+        }
+
+        /* ============================================================
+           PAGE HERO
+        ============================================================ */
+        .page-hero {
+            min-height: 88vh;
+            position: relative;
+            display: flex; align-items: center;
+            overflow: hidden;
+            padding-top: 150px; /* disesuaikan agar sama dengan paket-umroh */
+            background: linear-gradient(135deg, var(--navy-deep) 0%, #1e40af 55%, #2563eb 100%);
+        }
+        .page-hero-bg {
+            position: absolute; inset: 0;
+            background: url('/images/haji5.webp') center/cover no-repeat;
+            opacity: .1;
+        }
+        .page-hero-pattern {
+            position: absolute; inset: 0;
+            background-image:
+                radial-gradient(circle at 75% 40%, rgba(245,158,11,.18) 0%, transparent 50%),
+                radial-gradient(circle at 15% 70%, rgba(255,255,255,.06) 0%, transparent 40%);
+        }
+        /* geometric ring ornament */
+        .hero-ring {
+            position: absolute; right: -120px; top: 50%; transform: translateY(-50%);
+            width: 640px; height: 640px;
+            border: 1px solid rgba(245,158,11,.12); border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-ring::before {
+            content: ''; position: absolute; inset: 40px;
+            border: 1px solid rgba(255,255,255,.06); border-radius: 50%;
+        }
+        .hero-ring::after {
+            content: ''; position: absolute; inset: 100px;
+            border: 1px solid rgba(245,158,11,.08); border-radius: 50%;
+        }
+
+        .page-hero-content { position: relative; z-index: 1; padding: 60px 0; }
+        .breadcrumb-wrap { margin-bottom: 22px; }
+        .breadcrumb-wrap a { color: rgba(255,255,255,.55); font-size: .82rem; text-decoration: none; transition: color .3s; }
+        .breadcrumb-wrap a:hover { color: var(--gold-light); }
+        .breadcrumb-wrap span { color: rgba(255,255,255,.3); margin: 0 8px; font-size: .82rem; }
+        .breadcrumb-wrap .crumb-active { color: var(--gold-light); font-size: .82rem; }
+
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3);
+            color: var(--gold-light); font-size: .78rem; font-weight: 700;
+            letter-spacing: .16em; text-transform: uppercase;
+            padding: 6px 16px; border-radius: 50px; margin-bottom: 20px;
+        }
+        .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+        .page-hero-title { font-family: var(--ff-display); font-size: clamp(2.4rem, 5vw, 4rem); color: white; line-height: 1.1; margin-bottom: 20px; }
+        .page-hero-title em { color: var(--gold-light); font-style: italic; }
+        .page-hero-subtitle { font-size: 1.05rem; color: rgba(255,255,255,.72); line-height: 1.8; max-width: 560px; margin-bottom: 36px; }
+
+        /* stats inside hero */
+        .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+        .hero-stat { text-align: left; }
+        .hero-stat-val { font-family: var(--ff-display); font-size: 2.3rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 4px; }
+        .hero-stat-lbl { font-size: .78rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .08em; }
+
+        /* floating badge card */
+        .hero-side-card {
+            background: rgba(255,255,255,.07); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: var(--r-lg); padding: 32px;
+        }
+        .hero-side-card .card-eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; }
+        .hero-side-card .card-title { font-family: var(--ff-display); font-size: 1.5rem; color: white; font-weight: 600; margin-bottom: 20px; line-height: 1.25; }
+        .legality-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+        .legality-item:last-child { margin-bottom: 0; }
+        .leg-icon { width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: .9rem; }
+        .leg-icon.green { background: rgba(34,197,94,.15); color: #4ade80; }
+        .leg-icon.gold  { background: rgba(245,158,11,.15); color: var(--gold-light); }
+        .leg-icon.blue  { background: rgba(59,130,246,.15); color: #93c5fd; }
+        .leg-label { font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: 2px; }
+        .leg-val { font-size: .9rem; color: white; font-weight: 600; }
+
+        /* ============================================================
+           PROFIL SECTION
+        ============================================================ */
+        .about-img-wrap { position: relative; }
+        .about-main-img { width: 100%; border-radius: var(--r-lg); object-fit: cover; min-height: 480px; box-shadow: var(--shadow-lg); }
+        .about-float-card {
+            position: absolute; left: -28px; bottom: 36px;
+            background: white; border-radius: var(--r-md);
+            padding: 20px 24px; box-shadow: var(--shadow-md);
+            min-width: 220px; border-left: 4px solid var(--gold);
+        }
+        .about-float-num { font-family: var(--ff-display); font-size: 2.4rem; color: var(--navy); font-weight: 700; line-height: 1; }
+        .about-float-txt { font-size: .82rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5; }
+        .about-float-card2 {
+            position: absolute; right: -20px; top: 36px;
+            background: var(--navy); border-radius: var(--r-md);
+            padding: 16px 20px; box-shadow: var(--shadow-md);
+            min-width: 170px;
+        }
+        .about-float-card2 .num { font-family: var(--ff-display); font-size: 2rem; color: var(--gold-light); font-weight: 700; line-height: 1; }
+        .about-float-card2 .txt { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: 4px; }
+
+        .value-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+        .value-icon { width: 48px; height: 48px; flex-shrink: 0; background: var(--gold-pale); color: var(--gold); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+        .value-text h5 { font-size: .97rem; color: var(--navy); margin-bottom: 4px; }
+        .value-text p { font-size: .84rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
+
+        /* ============================================================
+           STATS ROW
+        ============================================================ */
+        .stats-section {
+            background: var(--navy-deep); padding: 64px 0;
+            position: relative; overflow: hidden;
+        }
+        .stats-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('/images/haji5.webp') center/cover; opacity: .06;
+        }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; z-index: 1; }
+        .stat-item { text-align: center; padding: 16px 24px; border-right: 1px solid rgba(255,255,255,.08); }
+        .stat-item:last-child { border-right: none; }
+        .stat-val { font-family: var(--ff-display); font-size: 3rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 8px; }
+        .stat-lbl { font-size: .82rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .1em; line-height: 1.5; }
+        .stat-icon { font-size: 1.4rem; color: rgba(245,158,11,.3); margin-bottom: 10px; }
+
+        /* ============================================================
+           LEGALITAS SECTION
+        ============================================================ */
+        .legal-card {
+            background: white; border-radius: var(--r-lg);
+            border: 1px solid var(--border); padding: 36px;
+            box-shadow: var(--shadow-sm); height: 100%;
+            transition: all .3s;
+        }
+        .legal-card:hover { border-color: var(--navy-light); box-shadow: var(--shadow-md); transform: translateY(-6px); }
+        .legal-card.featured { border: 2px solid var(--gold); box-shadow: var(--shadow-gold); }
+        .legal-icon { width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 20px; }
+        .legal-icon.green { background: #dcfce7; color: #16a34a; }
+        .legal-icon.blue  { background: var(--off-white); color: var(--navy); }
+        .legal-icon.gold  { background: var(--gold-pale); color: var(--gold); }
+        .legal-card h4 { font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; }
+        .legal-card p { font-size: .87rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
+        .legal-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--off-white); border: 1px solid var(--border); padding: 6px 14px; border-radius: 50px; font-size: .78rem; font-weight: 700; color: var(--navy); }
+
+        .ppiu-box {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+            border-radius: var(--r-lg); padding: 40px 44px;
+            position: relative; overflow: hidden;
+        }
+        .ppiu-box::before { content: ''; position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; background: rgba(245,158,11,.1); border-radius: 50%; }
+        .ppiu-box::after  { content: ''; position: absolute; left: -40px; bottom: -40px; width: 180px; height: 180px; background: rgba(255,255,255,.03); border-radius: 50%; }
+        .ppiu-box-content { position: relative; z-index: 1; }
+        .ppiu-label { font-size: .72rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 10px; }
+        .ppiu-number { font-family: var(--ff-display); font-size: 1.7rem; color: white; font-weight: 700; letter-spacing: .06em; margin-bottom: 12px; }
+        .ppiu-detail { font-size: .84rem; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 20px; }
+        .ppiu-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+        .ppiu-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.75); font-size: .75rem; font-weight: 600; padding: 5px 14px; border-radius: 50px; }
+        .ppiu-badge i { color: var(--gold-light); }
+
+        /* ============================================================
+           TIMELINE
+        ============================================================ */
+        .timeline { position: relative; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--navy-light), var(--border)); }
+        .tl-item { position: relative; margin-bottom: 36px; }
+        .tl-item:last-child { margin-bottom: 0; }
+        .tl-dot { position: absolute; left: -40px; top: 6px; width: 32px; height: 32px; background: var(--navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 800; border: 3px solid white; box-shadow: 0 0 0 2px var(--navy-light); font-family: var(--ff-body); }
+        .tl-dot.gold { background: var(--gold); color: var(--navy-deep); box-shadow: 0 0 0 2px var(--gold-light); }
+        .tl-year { font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); margin-bottom: 6px; }
+        .tl-title { font-family: var(--ff-display); font-size: 1.3rem; color: var(--text-dark); font-weight: 600; margin-bottom: 6px; }
+        .tl-desc { font-size: .85rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
+
+        /* ============================================================
+           TEAM CARDS
+        ============================================================ */
+        .team-card {
+            background: white; border-radius: var(--r-lg);
+            border: 1px solid var(--border); overflow: hidden;
+            text-align: center; transition: all .3s; height: 100%;
+        }
+        .team-card:hover { border-color: var(--navy-light); box-shadow: var(--shadow-md); transform: translateY(-6px); }
+        .team-img-wrap { position: relative; overflow: hidden; }
+        .team-img { width: 100%; height: 260px; object-fit: cover; object-position: top; transition: transform .5s ease; }
+        .team-card:hover .team-img { transform: scale(1.05); }
+        .team-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(29,78,216,.7) 0%, transparent 50%); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px; }
+        .team-card:hover .team-overlay { opacity: 1; }
+        .team-social { display: flex; gap: 8px; }
+        .team-social a { width: 34px; height: 34px; background: white; color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; text-decoration: none; transition: all .2s; }
+        .team-social a:hover { background: var(--gold); color: var(--navy-deep); }
+        .team-body { padding: 22px 20px; }
+        .team-name { font-family: var(--ff-display); font-size: 1.3rem; color: var(--navy); font-weight: 600; margin-bottom: 4px; }
+        .team-role { font-size: .8rem; color: var(--gold); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+        .team-desc { font-size: .82rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+        /* ============================================================
+           TESTIMONI
+        ============================================================ */
+        .testi-card { background: white; border-radius: var(--r-lg); padding: 30px; border: 1px solid var(--border); height: 100%; transition: all .3s; position: relative; }
+        .testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--navy-light); }
+        .quote-mark { font-family: var(--ff-display); font-size: 4.5rem; line-height: .8; color: var(--navy-light); margin-bottom: -8px; }
+        .stars { display: flex; gap: 3px; color: var(--gold); font-size: .85rem; margin-bottom: 14px; }
+        .testi-text { font-size: .9rem; color: var(--text-muted); line-height: 1.75; font-style: italic; margin-bottom: 22px; }
+        .testi-user { display: flex; align-items: center; gap: 13px; }
+        .testi-avatar { width: 46px; height: 46px; flex-shrink: 0; background: var(--navy); color: white; border-radius: 50%; font-family: var(--ff-display); font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
+        .testi-name { font-weight: 700; font-size: .92rem; color: var(--navy); margin-bottom: 2px; }
+        .testi-pkg  { font-size: .77rem; color: var(--text-muted); }
+        .testi-verified { position: absolute; top: 20px; right: 20px; background: #dcfce7; color: #16a34a; font-size: .68rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; display: flex; align-items: center; gap: 4px; }
+
+        /* ============================================================
+           MISI VISI CARDS
+        ============================================================ */
+        .mv-card {
+            border-radius: var(--r-lg); padding: 40px 36px; height: 100%;
+            position: relative; overflow: hidden;
+        }
+        .mv-card.visi  { background: var(--navy-deep); }
+        .mv-card.misi  { background: white; border: 1px solid var(--border); }
+        .mv-card.nilai { background: var(--gold-pale); border: 1px solid rgba(245,158,11,.2); }
+        .mv-card::after { content: ''; position: absolute; right: -40px; bottom: -40px; width: 160px; height: 160px; border-radius: 50%; }
+        .mv-card.visi::after  { background: rgba(245,158,11,.08); }
+        .mv-card.misi::after  { background: var(--off-white); }
+        .mv-card.nilai::after { background: rgba(245,158,11,.12); }
+        .mv-card-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; position: relative; z-index: 1; }
+        .mv-card.visi  .mv-card-icon { background: rgba(245,158,11,.15); color: var(--gold-light); }
+        .mv-card.misi  .mv-card-icon { background: var(--off-white); color: var(--navy); }
+        .mv-card.nilai .mv-card-icon { background: rgba(245,158,11,.2); color: var(--gold); }
+        .mv-card h4 { font-size: 1.1rem; margin-bottom: 14px; position: relative; z-index: 1; }
+        .mv-card.visi  h4 { color: white; }
+        .mv-card.misi  h4 { color: var(--navy); }
+        .mv-card.nilai h4 { color: var(--navy); }
+        .mv-card p, .mv-card li { font-size: .87rem; line-height: 1.75; position: relative; z-index: 1; }
+        .mv-card.visi  p, .mv-card.visi  li { color: rgba(255,255,255,.72); }
+        .mv-card.misi  p, .mv-card.misi  li { color: var(--text-muted); }
+        .mv-card.nilai p, .mv-card.nilai li { color: var(--text-dark); }
+        .mv-list { list-style: none; padding: 0; margin: 0; }
+        .mv-list li { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 8px; }
+        .mv-list li i { flex-shrink: 0; margin-top: 3px; font-size: .82rem; }
+        .mv-card.visi  .mv-list li i { color: var(--gold-light); }
+        .mv-card.misi  .mv-list li i { color: var(--navy-light); }
+        .mv-card.nilai .mv-list li i { color: var(--gold); }
+
+        /* ============================================================
+           FAQ
+        ============================================================ */
+        .accordion-item { border: 1px solid var(--border) !important; border-radius: var(--r-sm) !important; margin-bottom: 10px; overflow: hidden; background: white; }
+        .accordion-button { font-weight: 600; font-size: .95rem; color: var(--navy); padding: 20px 24px; box-shadow: none !important; background: white; }
+        .accordion-button:not(.collapsed) { background: var(--off-white); color: var(--navy); }
+        .accordion-body { font-size: .9rem; color: var(--text-muted); line-height: 1.8; padding: 4px 24px 22px; background: var(--off-white); }
+
+        /* ============================================================
+           FOOTER (Identik paket-umroh.html)
+        ============================================================ */
+        .footer {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            color: #94a3b8; padding: 72px 0 32px; font-size: .87rem; line-height: 1.75;
+        }
+        .footer h6 { color: white; font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; }
+        .footer p { color: #94a3b8; }
+        .footer-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 18px; }
+        .footer-brand .brand-icon { background: rgba(255,255,255,.06); border-radius: 10px; padding: 4px; }
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 9px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; font-size: .84rem; transition: color .3s; }
+        .footer-links a:hover { color: var(--gold-light); }
+        .social-links { display: flex; gap: 10px; margin-top: 20px; }
+        .social-link { width: 38px; height: 38px; background: rgba(255,255,255,.07); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: .85rem; transition: all .3s; }
+        .social-link:hover { background: var(--gold); color: var(--navy-deep); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; color: #94a3b8; }
+        .footer-contact-item i { color: var(--gold-light); margin-top: 3px; }
+        .footer-line { border-color: rgba(255,255,255,.08); margin: 40px 0 24px; }
+
+        /* ============================================================
+           FLOATING WA
+        ============================================================ */
+        .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 1100; background: #25D366; color: white; display: flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: .88rem; box-shadow: 0 6px 24px rgba(37,211,102,.45); transition: all .3s; }
+        .wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,.55); color: white; }
+        .wa-float i { font-size: 1.3rem; }
+
+        /* ============================================================
+           RESPONSIVE (Identik paket-umroh.html)
+        ============================================================ */
+        @media (max-width: 991px) {
+            section { padding: 70px 0; }
+            .top-bar { height: auto; padding: 10px 0; }
+            .top-bar-inner { flex-direction: column; gap: 8px; height: auto; padding: 0 18px; }
+            .top-left, .top-right { justify-content: center; flex-wrap: wrap; gap: 10px; }
+            #navbar { top: 74px !important; }
+            
+            .nav-inner { padding: 0 20px; }
+            #navbarMenu {
+                position: absolute; top: 100%; left: 16px; right: 16px;
+                background: white; border-radius: 16px; padding: 20px;
+                box-shadow: var(--shadow-lg); z-index: 200;
+            }
+            .nav-links { flex-direction: column; gap: 0; width: 100%; }
+            .nav-links a { color: var(--navy) !important; padding: 11px 0; border-bottom: 1px solid var(--border); display: block; width: 100%; }
+            .nav-links a:hover { color: var(--gold) !important; padding-left: 6px; }
+            .nav-cta-wrap { margin-top: 16px; }
+            .nav-cta-wrap .btn-gold { width: 100%; justify-content: center; }
+            
+            .page-hero { min-height: auto; padding-top: 220px; padding-bottom: 60px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+            .about-float-card { display: none; }
+            .about-float-card2 { display: none; }
+        }
+        @media (max-width: 767px) {
+            .top-bar { display: none; }
+            .top-left { flex-direction: column; gap: 6px; }
+            .top-right { display: none; }
+            #navbar { top: 0 !important; }
+            .page-hero { padding-top: 110px; }
+            .wa-float .wa-label { display: none; }
+            .wa-float { border-radius: 50%; padding: 16px; }
+            .hero-stats { gap: 20px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .hero-ring { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container-fluid">
+        <div class="top-bar-inner">
+            <div class="top-left">
+                <span><i class="fas fa-phone-alt"></i> +62 813-1955-4103</span>
+                <span><i class="fas fa-envelope"></i> fajwarihlahsunnah@gmail.com</span>
+            </div>
+            <div class="top-right">
+                <span><i class="fas fa-clock"></i> Senin - Sabtu : 08.00 - 21.00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav id="navbar" aria-label="Navigasi utama">
+    <div class="nav-inner">
+        <a href="/" class="nav-brand" aria-label="FAST UMROH - Beranda">
+            <div class="brand-icon">
+                <img src="/images/logo.svg" alt="Logo FAST UMROH">
+            </div>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <div class="nav-links me-lg-4">
+                <a href="/">Beranda</a>
+                <a href="/paket-umroh.html">Paket</a>
+                <a href="/tentang-kami.html" class="active">Tentang</a>
+                <a href="/#testimoni">Testimoni</a>
+                <a href="/#faq">FAQ</a>
+            </div>
+            <div class="nav-cta-wrap">
+                <a href="https://wa.me/6281319554103" class="btn-gold" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> Hubungi Admin
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="page-hero" role="banner">
+    <div class="page-hero-bg" aria-hidden="true"></div>
+    <div class="page-hero-pattern" aria-hidden="true"></div>
+    <div class="hero-ring" aria-hidden="true"></div>
+
+    <div class="container page-hero-content">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <div class="breadcrumb-wrap">
+                    <a href="/">Beranda</a>
+                    <span>/</span>
+                    <span class="crumb-active">Tentang Kami</span>
+                </div>
+                <div class="hero-eyebrow">
+                    <span class="dot" aria-hidden="true"></span>
+                    Biro Umroh & Haji Resmi Kemenag RI
+                </div>
+                <h1 class="page-hero-title">
+                    Amanah Sejak Hari<br>Pertama, <em>Tulus Sampai<br>Tanah Suci</em>
+                </h1>
+                <p class="page-hero-subtitle">
+                    FAST UMROH hadir sebagai mitra ibadah terpercaya yang mengedepankan transparansi, kenyamanan, dan bimbingan sesuai sunnah agar setiap jamaah bisa fokus beribadah tanpa kekhawatiran.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">Ratusan</div>
+                        <div class="hero-stat-lbl">Jamaah Berangkat</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">5+</div>
+                        <div class="hero-stat-lbl">Tahun Pengalaman</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">4.9★</div>
+                        <div class="hero-stat-lbl">Rating Jamaah</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">3</div>
+                        <div class="hero-stat-lbl">Pilihan Paket</div>
+                    </div>
+                </div>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="https://wa.me/6281319554103" class="btn-gold" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> Konsultasi Gratis
+                    </a>
+                    <a href="#profil" class="btn-outline-white">
+                        <i class="fas fa-arrow-down"></i> Kenali Kami
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 fade-up">
+                <div class="hero-side-card">
+                    <div class="card-eyebrow"><i class="fas fa-shield-alt me-1"></i> Legalitas Resmi</div>
+                    <div class="card-title">Biro Perjalanan Berizin<br>& Terdaftar Resmi</div>
+
+                    <div class="legality-item">
+                        <div class="leg-icon green"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <div class="leg-label">Izin PPIU Kemenag RI</div>
+                            <div class="leg-val">No. 25012400728540002</div>
+                        </div>
+                    </div>
+                    <div class="legality-item">
+                        <div class="leg-icon gold"><i class="fas fa-certificate"></i></div>
+                        <div>
+                            <div class="leg-label">Penyelenggara Resmi</div>
+                            <div class="leg-val">PA by UKASYA</div>
+                        </div>
+                    </div>
+                    <div class="legality-item">
+                        <div class="leg-icon blue"><i class="fas fa-database"></i></div>
+                        <div>
+                            <div class="leg-label">Sistem Pengawasan</div>
+                            <div class="leg-val">Terdaftar SISKO PATUH</div>
+                        </div>
+                    </div>
+                    <div class="legality-item">
+                        <div class="leg-icon green"><i class="fas fa-star"></i></div>
+                        <div>
+                            <div class="leg-label">Akreditasi</div>
+                            <div class="leg-val">A – Kemenag RI</div>
+                        </div>
+                    </div>
+                    <div class="legality-item" style="margin-bottom:0">
+                        <div class="leg-icon gold"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <div class="leg-label">Layanan Aktif</div>
+                            <div class="leg-val">Senin – Sabtu, 08.00–21.00 WIB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="stats-section" role="region" aria-label="Statistik FAST UMROH">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item fade-up">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-val">500+</div>
+                <div class="stat-lbl">Total Jamaah<br>Diberangkatkan</div>
+            </div>
+            <div class="stat-item fade-up">
+                <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                <div class="stat-val">5+</div>
+                <div class="stat-lbl">Tahun<br>Beroperasi</div>
+            </div>
+            <div class="stat-item fade-up">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-val">4.9</div>
+                <div class="stat-lbl">Rating Rata-rata<br>Jamaah</div>
+            </div>
+            <div class="stat-item fade-up">
+                <div class="stat-icon"><i class="fas fa-plane-departure"></i></div>
+                <div class="stat-val">30+</div>
+                <div class="stat-lbl">Kali<br>Keberangkatan</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="profil" aria-labelledby="profil-title">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 fade-up">
+                <div class="about-img-wrap">
+                    <img src="/images/umroh5.webp" alt="Tim FAST UMROH" class="about-main-img" loading="lazy">
+                    <div class="about-float-card">
+                        <div class="about-float-num">500+</div>
+                        <div class="about-float-txt">Jamaah dari seluruh Indonesia<br>telah kami berangkatkan</div>
+                    </div>
+                    <div class="about-float-card2">
+                        <div class="num">4.9★</div>
+                        <div class="txt">Rating kepuasan<br>jamaah kami</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 fade-up">
+                <span class="section-label">Profil Perusahaan</span>
+                <h2 class="section-title" id="profil-title">
+                    FAST UMROH,<br>
+                    <em>Lahir dari Ketulusan<br>Melayani Tamu Allah</em>
+                </h2>
+                <p style="font-size:.97rem;color:var(--text-muted);line-height:1.85;margin-bottom:20px;">
+                    <strong style="color:var(--navy)">FAST UMROH</strong> adalah divisi perjalanan ibadah dari <strong style="color:var(--navy)">PA by UKASYA</strong>, biro resmi yang mengantongi izin PPIU (Penyelenggara Perjalanan Ibadah Umroh) dari Kementerian Agama Republik Indonesia dengan nomor <strong style="color:var(--navy)">25012400728540002</strong>.
+                </p>
+                <p style="font-size:.97rem;color:var(--text-muted);line-height:1.85;margin-bottom:28px;">
+                    Kami hadir dengan visi sederhana namun kuat: memastikan setiap jamaah dapat menjalankan ibadah umroh dan haji dengan tenang, khusyuk, dan sesuai tuntunan sunnah. Sejak beroperasi, kami telah melayani ratusan jamaah dari berbagai daerah di Indonesia dengan standar pelayanan yang konsisten dan harga yang transparan.
+                </p>
+
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="value-text">
+                        <h5>Amanah & Transparan</h5>
+                        <p>Setiap rupiah yang Anda percayakan kepada kami dikelola dengan penuh tanggung jawab. Tidak ada biaya tersembunyi semua tercantum jelas di awal.</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="value-text">
+                        <h5>Bimbingan Sesuai Sunnah</h5>
+                        <p>Pembimbing ibadah kami berpengalaman dan berpengetahuan luas, memastikan setiap rangkaian ibadah dilaksanakan sesuai tuntunan Rasulullah SAW.</p>
+                    </div>
+                </div>
+                <div class="value-item" style="margin-bottom:0">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <div class="value-text">
+                        <h5>Pelayanan dari Hati</h5>
+                        <p>Kami memahami bahwa ibadah ke Baitullah adalah momen sakral sekali seumur hidup. Karenanya, kami memberikan perhatian penuh kepada setiap jamaah seperti melayani anggota keluarga sendiri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="background:var(--off-white)" aria-labelledby="visi-misi-title">
+    <div class="container">
+        <div class="text-center mb-5 fade-up">
+            <span class="section-label">Landasan Kami</span>
+            <h2 class="section-title mx-auto" id="visi-misi-title">Visi, Misi &amp; Nilai</h2>
+            <p class="section-sub mx-auto text-center">Setiap langkah kami berpijak pada fondasi yang jelas — menjadi mitra ibadah paling dipercaya di Indonesia.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="mv-card visi h-100">
+                    <div class="mv-card-icon"><i class="fas fa-eye"></i></div>
+                    <h4>Visi</h4>
+                    <p>Menjadi biro perjalanan umroh dan haji terpercaya, profesional, dan berlandaskan nilai-nilai Islam yang murni sehingga setiap jamaah Indonesia dapat mewujudkan perjalanan ibadah terbaik sepanjang hidupnya.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="mv-card misi h-100">
+                    <div class="mv-card-icon"><i class="fas fa-rocket"></i></div>
+                    <h4>Misi</h4>
+                    <ul class="mv-list">
+                        <li><i class="fas fa-check-circle"></i> Memberikan layanan ibadah berkualitas tinggi dengan harga terjangkau dan transparan</li>
+                        <li><i class="fas fa-check-circle"></i> Menyediakan pembimbing ibadah yang kompeten sesuai sunnah Rasulullah SAW</li>
+                        <li><i class="fas fa-check-circle"></i> Memastikan keamanan dan kenyamanan jamaah dari awal hingga kembali ke tanah air</li>
+                        <li><i class="fas fa-check-circle"></i> Terus berinovasi dalam meningkatkan pengalaman ibadah jamaah</li>
+                        <li><i class="fas fa-check-circle"></i> Mengelola kepercayaan jamaah dengan penuh amanah dan integritas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 fade-up">
+                <div class="mv-card nilai h-100">
+                    <div class="mv-card-icon"><i class="fas fa-star"></i></div>
+                    <h4>Nilai Inti</h4>
+                    <ul class="mv-list">
+                        <li><i class="fas fa-gem"></i> <strong>Amanah</strong></li>
+                        <li><i class="fas fa-gem"></i> <strong>Profesional</strong></li>
+                        <li><i class="fas fa-gem"></i> <strong>Transparan</strong></li>
+                        <li><i class="fas fa-gem"></i> <strong>Peduli</strong></li>
+                        <li><i class="fas fa-gem"></i> <strong>Sunnah</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="legalitas" aria-labelledby="legalitas-title">
+    <div class="container">
+        <div class="text-center mb-5 fade-up">
+            <span class="section-label">Keabsahan Usaha</span>
+            <h2 class="section-title mx-auto" id="legalitas-title">Legalitas Resmi &amp; Terverifikasi</h2>
+            <p class="section-sub mx-auto text-center">Kepercayaan dimulai dari legalitas. FAST UMROH beroperasi di bawah naungan regulasi resmi Kementerian Agama RI, sehingga perjalanan ibadah Anda terlindungi sepenuhnya.</p>
+        </div>
+
+        <div class="row g-4 mb-5 justify-content-center">
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="legal-card featured h-100">
+                    <div class="legal-icon gold"><i class="fas fa-gavel"></i></div>
+                    <h4>Izin PPIU Kemenag RI</h4>
+                    <p>FAST UMROH beroperasi di bawah izin resmi Penyelenggara Perjalanan Ibadah Umroh (PPIU) yang diterbitkan langsung oleh Kementerian Agama Republik Indonesia. Izin ini menjamin keabsahan dan keamanan operasional kami.</p>
+                    <div class="legal-badge"><i class="fas fa-check-circle text-success"></i> No. PPIU: 25012400728540002</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="legal-card h-100">
+                    <div class="legal-icon blue"><i class="fas fa-database"></i></div>
+                    <h4>SISKO PATUH</h4>
+                    <p>Kami terdaftar dan aktif dalam sistem pengawasan SISKO PATUH — Sistem Pengawasan Terpadu Penyelenggara Umroh milik Kemenag RI. Jamaah dapat memverifikasi status kami secara online kapan saja melalui portal resmi Kemenag.</p>
+                    <div class="legal-badge"><i class="fas fa-check-circle text-success"></i> Status: Aktif & Terverifikasi</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="legal-card h-100">
+                    <div class="legal-icon green"><i class="fas fa-building"></i></div>
+                    <h4>Badan Hukum Resmi</h4>
+                    <p>Beroperasi di bawah naungan badan hukum <strong>PA by UKASYA</strong> yang terdaftar secara resmi. Seluruh transaksi keuangan dilakukan melalui rekening perusahaan yang dapat dipertanggungjawabkan, bukan rekening pribadi.</p>
+                    <div class="legal-badge"><i class="fas fa-building text-primary"></i> PA by UKASYA</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="legal-card h-100">
+                    <div class="legal-icon gold"><i class="fas fa-file-contract"></i></div>
+                    <h4>Kontrak Jelas &amp; Tertulis</h4>
+                    <p>Setiap jamaah mendapatkan perjanjian tertulis yang mencantumkan hak dan kewajiban kedua pihak, fasilitas yang didapat, jadwal keberangkatan, dan prosedur pengembalian dana jika diperlukan.</p>
+                    <div class="legal-badge"><i class="fas fa-file-alt text-warning"></i> MoU Tertulis per Jamaah</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 fade-up">
+                <div class="ppiu-box h-100" style="display:flex;flex-direction:column;justify-content:center;">
+                    <div class="ppiu-box-content">
+                        <div class="ppiu-label"><i class="fas fa-star me-1"></i> Nomor Resmi</div>
+                        <div class="ppiu-number">25012400728540002</div>
+                        <div class="ppiu-detail">Verifikasi keabsahan izin kami kapan saja melalui portal resmi Kemenag RI di <strong style="color:white">Umrah Cerdas</strong> atau hubungi langsung kantor wilayah Kemenag setempat.</div>
+                        <div class="ppiu-badges">
+                            <span class="ppiu-badge"><i class="fas fa-check-circle"></i> PPIU Aktif</span>
+                            <span class="ppiu-badge"><i class="fas fa-check-circle"></i> Kemenag RI</span>
+                            <span class="ppiu-badge"><i class="fas fa-check-circle"></i> SISKO PATUH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="background:var(--off-white)" aria-labelledby="sejarah-title">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-5 fade-up">
+                <span class="section-label">Perjalanan Kami</span>
+                <h2 class="section-title" id="sejarah-title">Dari Niat yang Tulus<br>Menjadi Biro<br><em>yang Dipercaya</em></h2>
+                <p class="section-sub mb-4">
+                    Perjalanan FAST UMROH dimulai dari ketulusan hati yang ingin membantu sesama umat Islam mewujudkan panggilan ke Tanah Suci dengan cara yang benar, aman, dan terjangkau.
+                </p>
+                <img src="/images/haji6.webp" alt="Sejarah FAST UMROH" style="width:100%;border-radius:var(--r-lg);object-fit:cover;height:300px;box-shadow:var(--shadow-md);" loading="lazy">
+            </div>
+            <div class="col-lg-7 fade-up">
+                <div class="timeline">
+                    <div class="tl-item">
+                        <div class="tl-dot">20</div>
+                        <div class="tl-year">Tahun 2020 · Fondasi</div>
+                        <div class="tl-title">Lahirnya Visi FAST UMROH</div>
+                        <p class="tl-desc">Berawal dari keprihatinan terhadap maraknya penipuan travel umroh, para pendiri FAST UMROH sepakat untuk membangun biro perjalanan ibadah yang benar-benar amanah, transparan, dan berpihak pada kepentingan jamaah.</p>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot">21</div>
+                        <div class="tl-year">Tahun 2021 · Legalitas</div>
+                        <div class="tl-title">Mendapatkan Izin Resmi PPIU Kemenag RI</div>
+                        <p class="tl-desc">Setelah melalui proses seleksi ketat dan verifikasi oleh Kementerian Agama RI, FAST UMROH di bawah naungan PA by UKASYA resmi mendapatkan Surat Izin PPIU. Ini menjadi tonggak kepercayaan pertama kami kepada publik.</p>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot">22</div>
+                        <div class="tl-year">Tahun 2022 · Keberangkatan Perdana</div>
+                        <div class="tl-title">Memberangkatkan Kelompok Jamaah Pertama</div>
+                        <p class="tl-desc">Momen yang paling berkesan dalam sejarah kami — memberangkatkan jamaah perdana. Air mata haru, doa yang dipanjatkan, dan senyum kepuasan jamaah menjadi bahan bakar kami untuk terus berkembang.</p>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot gold">23</div>
+                        <div class="tl-year">Tahun 2023 · Ekspansi Paket</div>
+                        <div class="tl-title">Hadirkan Paket Umroh Plus Turkiye</div>
+                        <p class="tl-desc">Merespons tingginya minat jamaah untuk mengunjungi destinasi Islam bersejarah, kami meluncurkan Paket Umroh Plus Turkiye, menggabungkan pengalaman umroh di Tanah Suci dengan wisata sejarah Islam di Istanbul dan Cappadocia.</p>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot gold">24</div>
+                        <div class="tl-year">Tahun 2024 · Program Haji</div>
+                        <div class="tl-title">Membuka Program Haji Khusus</div>
+                        <p class="tl-desc">FAST UMROH resmi membuka layanan Haji Khusus setelah mendapatkan kuota dari Kemenag RI. Program ini memberikan alternatif bagi calon jamaah haji yang ingin berhaji tanpa antrian panjang puluhan tahun.</p>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot gold">26</div>
+                        <div class="tl-year">Tahun 2026 · Hari Ini</div>
+                        <div class="tl-title">Terus Melayani dengan Lebih Baik</div>
+                        <p class="tl-desc">Dengan ratusan jamaah yang telah kami berangkatkan, kepercayaan menjadi landasan terkuat kami. Jadwal 2026 telah dibuka — dan kami siap kembali mengantarkan Anda menuju Baitullah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="testimoni" style="background:var(--off-white)" aria-labelledby="testi-title">
+    <div class="container">
+        <div class="text-center mb-5 fade-up">
+            <div class="ornament"><span>✦</span></div>
+            <span class="section-label">Kata Mereka</span>
+            <h2 class="section-title mx-auto" id="testi-title">Cerita Nyata dari<br>Jamaah Kami</h2>
+            <p class="section-sub mx-auto text-center">Kepercayaan jamaah adalah penghargaan terbesar bagi kami. Berikut pengalaman tulus dari jamaah yang telah kami layani.</p>
+        </div>
+        <div class="row g-4">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eAw4GyR4Mi4?si=S-MFjLokoECeWGUV&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5 fade-up">
+                <span class="section-label">Pertanyaan Umum</span>
+                <h2 class="section-title" id="faq-title">Ada yang Ingin<br>Anda Tanyakan?</h2>
+                <p class="section-sub mb-4">Kami merangkum pertanyaan-pertanyaan yang paling sering diajukan calon jamaah. Tidak menemukan jawabannya? Hubungi kami langsung.</p>
+                <a href="https://wa.me/6281319554103?text=Halo%20FAST%20UMROH%2C%20saya%20ingin%20bertanya%20tentang%20paket%20umroh"
+                   class="btn-gold" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> Tanya Langsung
+                </a>
+                <div style="margin-top:32px;padding:24px;background:var(--off-white);border-radius:var(--r-md);border:1px solid var(--border)">
+                    <div style="font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:10px">Kontak Cepat</div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+                        <i class="fab fa-whatsapp" style="color:#25D366;font-size:1.1rem"></i>
+                        <a href="https://wa.me/6281319554103" style="font-size:.87rem;color:var(--text-dark);font-weight:600;text-decoration:none">0813-1955-4103</a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <i class="fab fa-whatsapp" style="color:#25D366;font-size:1.1rem"></i>
+                        <a href="https://wa.me/628119234103" style="font-size:.87rem;color:var(--text-dark);font-weight:600;text-decoration:none">0811-923-4103</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 fade-up">
+                <div class="accordion" id="faqAccordion">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                Apakah FAST UMROH benar-benar legal dan terdaftar di Kemenag RI?
+                            </button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ya, <strong>FAST UMROH adalah biro resmi</strong> yang bernaung di bawah PA by UKASYA dengan izin PPIU Nomor <strong>25012400728540002</strong> yang dikeluarkan oleh Kementerian Agama RI. Anda dapat memverifikasi keabsahan kami langsung di portal resmi Kemenag RI melalui <strong>umrah.kemenag.go.id</strong> atau dengan menghubungi kantor wilayah Kemenag setempat. Kami juga terdaftar aktif di sistem SISKO PATUH.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Dokumen apa saja yang harus disiapkan untuk umroh?
+                            </button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Dokumen yang perlu disiapkan: <strong>Paspor asli</strong> (masa berlaku minimal 7 bulan), <strong>KTP asli</strong>, <strong>Kartu Keluarga (KK)</strong>, <strong>Buku Nikah</strong> (untuk pasangan suami istri), <strong>Akta kelahiran</strong> (untuk anak), <strong>Pas foto 4x6 background putih</strong> (4 lembar), dan <strong>Sertifikat vaksin meningitis</strong>. Jika belum memiliki paspor, tim kami siap membantu proses pembuatan termasuk surat rekomendasi ke kantor imigrasi.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Bagaimana sistem pembayaran dan apakah ada cicilan?
+                            </button>
+                        </h3>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Pembayaran dilakukan dengan sistem <strong>DP minimal 30%</strong> untuk mengunci kursi, kemudian dilanjutkan dengan cicilan bertahap hingga <strong>H-30 sebelum keberangkatan</strong>. Semua pembayaran ditransfer ke <strong>rekening perusahaan resmi</strong> PA by UKASYA — bukan rekening pribadi. Setiap transaksi akan mendapatkan bukti pembayaran resmi yang tercatat dalam sistem kami.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Apakah harga paket sudah benar-benar all-in?
+                            </button>
+                        </h3>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ya. Harga yang tertera sudah mencakup <strong>Tiket Pesawat PP, Visa Umroh, Hotel, Makan 3x Sehari, Bus AC, Muthawif & Pembimbing, Perlengkapan Umroh (koper, tas, mukena/ihram, buku doa), dan Air Zam-zam 10 liter</strong>. Yang <em>belum termasuk</em> hanya biaya paspor pribadi, suntik meningitis, kelebihan bagasi maskapai, dan pengeluaran pribadi di luar program. Tidak ada biaya tersembunyi lain.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                Bagaimana jika jadwal keberangkatan saya terpaksa dibatalkan?
+                            </button>
+                        </h3>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Kami memiliki <strong>kebijakan reschedule dan refund yang jelas dan tertulis</strong> dalam kontrak perjanjian. Jika pembatalan disebabkan oleh kebijakan pemerintah (force majeure), jamaah mendapatkan refund penuh atau dapat dijadwalkan ulang tanpa biaya tambahan. Untuk pembatalan atas inisiatif jamaah, berlaku ketentuan yang tercantum dalam perjanjian. Silakan konsultasikan dengan tim kami sebelum mendaftar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                Berapa lama proses pengurusan visa umroh?
+                            </button>
+                        </h3>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Proses visa umroh biasanya membutuhkan <strong>7–14 hari kerja</strong> setelah seluruh dokumen lengkap dan valid diserahkan. Tim kami akan mengurus seluruh proses — Anda hanya perlu menyiapkan dokumen yang dipersyaratkan. Kami akan memberitahu perkembangan status visa secara berkala melalui WhatsApp.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                Apakah ada manasik sebelum keberangkatan?
+                            </button>
+                        </h3>
+                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ya, <strong>manasik umroh intensif</strong> adalah bagian wajib yang sudah termasuk dalam paket. Manasik dilaksanakan beberapa hari sebelum keberangkatan, membahas tata cara ibadah umroh dari awal hingga akhir, adab selama di Tanah Suci, praktik bacaan doa, serta informasi logistik perjalanan. Peserta akan mendapatkan buku panduan manasik secara gratis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                Bolehkah berangkat sendiri tanpa mahram (untuk wanita)?
+                            </button>
+                        </h3>
+                        <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sesuai regulasi Arab Saudi, <strong>wanita di bawah usia 45 tahun wajib disertai mahram</strong>. Namun, wanita berusia 45 tahun ke atas dapat bergabung dalam rombongan resmi tanpa mahram pribadi, dengan syarat menggunakan surat keterangan mahram kelompok dari biro kami. Silakan konsultasikan kondisi Anda dengan tim kami agar kami dapat memberikan solusi terbaik.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="background:var(--navy);position:relative;overflow:hidden;padding:100px 0;">
+    <div style="position:absolute;inset:0;opacity:.04;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34zm0-18l-16-9.33V23.33L28 14l16 9.33V38.67z' fill='%23F59E0B' fill-opacity='1'/%3E%3C/svg%3E\");" aria-hidden="true"></div>
+    <div style="position:absolute;right:-100px;top:-100px;width:400px;height:400px;background:rgba(245,158,11,.07);border-radius:50%;" aria-hidden="true"></div>
+    <div style="position:absolute;left:-80px;bottom:-80px;width:320px;height:320px;background:rgba(255,255,255,.03);border-radius:50%;" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center fade-up">
+                <div class="ornament"><span>✦</span></div>
+                <span class="section-label" style="color:var(--gold-light)">Mulai Perjalanan Anda</span>
+                <h2 style="font-family:var(--ff-display);font-size:clamp(2.2rem,4.5vw,3.5rem);color:white;font-weight:600;margin-bottom:16px;line-height:1.12;">
+                    Saatnya Wujudkan<br><em style="color:var(--gold-light)">Panggilan Baitullah</em>
+                </h2>
+                <p style="font-size:1.02rem;color:rgba(255,255,255,.68);max-width:480px;margin:0 auto 38px;line-height:1.75;">
+                    Bersama FAST UMROH yang amanah dan berpengalaman, langkah menuju Tanah Suci menjadi lebih mudah, aman, dan bermakna. Hubungi kami sekarang.
+                </p>
+                <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+                    <a href="https://wa.me/6281319554103?text=Halo%20FAST%20UMROH%2C%20saya%20ingin%20konsultasi%20tentang%20paket%20umroh"
+                       class="btn-gold" target="_blank" rel="noopener noreferrer" style="padding:16px 36px;font-size:.97rem;">
+                        <i class="fab fa-whatsapp"></i> Konsultasi Sekarang
+                    </a>
+                    <a href="/detail-paket.html" class="btn-outline-white">
+                        <i class="fas fa-compass"></i> Lihat Semua Paket
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer mt-5" role="contentinfo">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-12">
+                <a href="/" class="footer-brand" aria-label="FAST UMROH Beranda">
+                    <div class="brand-icon">
+                        <img src="/images/logo.svg" alt="Logo FAST UMROH" loading="lazy">
+                    </div>
+                </a>
+                <p>Niat suci harus dibarengi pilihan biro yang tepat. Kami selalu menjaga amanah jamaah agar perjalanan ke Tanah Suci membawa kesan yang membekas di hati.</p>
+                <div class="social-links" aria-label="Media sosial FAST UMROH">
+                    <a href="#" class="social-link" aria-label="Facebook FAST UMROH" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram FAST UMROH" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube FAST UMROH" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/6281319554103" class="social-link" aria-label="WhatsApp FAST UMROH" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <h6>Paket Kami</h6>
+                <ul class="footer-links">
+                    <li><a href="/paket-umroh.html#paket-ekonomis">Umroh Ekonomis 9 Hari</a></li>
+                    <li><a href="/paket-umroh.html#paket-plus-turkiye">Umroh Plus Turkiye</a></li>
+                    <li><a href="/paket-umroh.html#paket-haji-khusus">Haji Khusus 2025</a></li>
+                    <li><a href="/#keunggulan">Fasilitas Lengkap</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h6>Legalitas</h6>
+                <ul class="footer-links">
+                    <li><a href="#legalitas"><i class="fas fa-shield-alt text-success me-1" aria-hidden="true"></i> Terdaftar SISKO PATUH</a></li>
+                    <li><a href="#legalitas"><i class="fas fa-check-circle text-success me-1" aria-hidden="true"></i> Izin Resmi Kemenag RI</a></li>
+                    <li><a href="#faq">FAQ Pendaftaran</a></li>
+                </ul>
+                <div style="margin-top:12px; padding:14px; background:rgba(255,255,255,.05); border-radius:10px; border:1px solid rgba(245,158,11,.25);">
+                    <p style="font-size:.78rem; margin-bottom:4px; color:#94a3b8;">Penyelenggara: PA by UKASYA</p>
+                    <p style="font-size:.78rem; margin:0; color:#94a3b8;">No PPIU: <strong style="color:var(--gold-light)">25012400728540002</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <h6>Pusat Bantuan</h6>
+                <address style="font-style:normal">
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <div>
+                            <a href="https://wa.me/6281319554103" style="color:#94a3b8;text-decoration:none">0813-1955-4103 (WA 1)</a><br>
+                            <a href="https://wa.me/628119234103" style="color:#94a3b8;text-decoration:none">0811-923-4103 (WA 2)</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:fajwarihlahsunnah@gmail.com" style="color:#94a3b8;text-decoration:none">fajwarihlahsunnah@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
+                        <a href="https://fast-umroh.com" style="color:#94a3b8;text-decoration:none">fast-umroh.com</a>
+                    </div>
+                </address>
+            </div>
+        </div>
+        <hr class="footer-line">
+        <div class="" style="font-size:.83rem; text-align:center;">
+            <p style="margin:0; opacity:.6;">&copy; 2026 FAST UMROH. Hak Cipta Dilindungi.</p>
+            <p style="margin:0; opacity:.5;">Dikembangkan oleh <strong>Clicksy.id</strong></p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/6281319554103" class="wa-float"
+   rel="noopener noreferrer" target="_blank"
+   aria-label="Hubungi kami via WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-label">Hubungi Kami</span>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Sticky Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Fade-up Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Animated counters for stats
+    function animateCounter(el, target, suffix = '') {
+        let start = 0;
+        const duration = 2000;
+        const step = target / (duration / 16);
+        const timer = setInterval(() => {
+            start += step;
+            if (start >= target) { start = target; clearInterval(timer); }
+            el.textContent = Math.floor(start) + suffix;
+        }, 16);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const statVals = e.target.querySelectorAll('.stat-val');
+                statVals.forEach(el => {
+                    const text = el.textContent;
+                    if (text.includes('500')) animateCounter(el, 500, '+');
+                    else if (text.includes('4.9')) { el.textContent = '4.9'; }
+                    else if (text === '5+') animateCounter(el, 5, '+');
+                    else if (text === '30+') animateCounter(el, 30, '+');
+                });
+                statsObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) statsObserver.observe(statsSection);
+</script>
+</body>
+</html>
