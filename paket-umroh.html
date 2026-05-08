@@ -12,8 +12,24 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
-
     <link rel="canonical" href="https://fast-umroh.com/paket-umroh.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fast-umroh.com/paket-umroh.html">
+    <meta property="og:title" content="Detail Paket Umroh & Haji Khusus 2026 | FAST UMROH">
+    <meta property="og:description" content="Detail lengkap paket Umroh Ekonomis 9 Hari, Umroh Plus Turkiye 12 Hari, dan Haji Khusus 2025 – fasilitas, hotel, dan harga all-in oleh FAST UMROH.">
+    <meta property="og:image" content="https://fast-umroh.com/images/haji5.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Detail Paket Umroh & Haji Khusus 2026 | FAST UMROH">
+    <meta property="og:site_name" content="FAST UMROH">
+    <meta property="og:locale" content="id_ID">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Detail Paket Umroh & Haji Khusus 2026 | FAST UMROH">
+    <meta name="twitter:description" content="Detail lengkap paket Umroh Ekonomis 9 Hari, Umroh Plus Turkiye 12 Hari, dan Haji Khusus 2025 – fasilitas, hotel, dan harga all-in oleh FAST UMROH.">
+    <meta name="twitter:image" content="https://fast-umroh.com/images/haji5.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,9 +38,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* ============================================================
-           DESIGN TOKENS
-        ============================================================ */
         :root {
             --navy:       #1D4ED8;
             --navy-deep:  #1E3A8A;
@@ -50,7 +63,6 @@
             --r-sm: 8px; --r-md: 16px; --r-lg: 24px;
         }
 
-        /* BASE */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
         body { font-family: var(--ff-body); background: var(--cream); color: var(--text-dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -59,7 +71,6 @@
         h1, h2, h3 { font-family: var(--ff-display); font-weight: 600; letter-spacing: -.02em; }
         h4, h5, h6 { font-family: var(--ff-body); font-weight: 700; }
 
-        /* UTILITY */
         .section-label {
             display: inline-block; font-size: .72rem; font-weight: 700;
             letter-spacing: .2em; text-transform: uppercase;
@@ -75,7 +86,6 @@
         .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
 
-        /* BUTTONS */
         .btn-gold {
             display: inline-flex; align-items: center; gap: 8px;
             background: var(--gold); color: var(--navy-deep);
@@ -106,16 +116,10 @@
         }
         .btn-outline-white:hover { background: white; color: var(--navy); border-color: white; }
 
-        /* ============================================================
-           GLOBAL FIX
-        ============================================================ */
         html, body { overflow-x: hidden; width: 100%; }
         .row { margin-left: 0; margin-right: 0; }
         img { max-width: 100%; height: auto; }
 
-        /* ============================================================
-           TOP BAR (Identik index.html)
-        ============================================================ */
         .top-bar {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1200; height: 42px;
             background: var(--navy-deep); border-bottom: 1px solid rgba(255,255,255,.08);
@@ -131,9 +135,6 @@
         }
         .top-bar i { color: var(--gold-light); }
 
-        /* ============================================================
-           NAVBAR (Identik index.html)
-        ============================================================ */
         #navbar {
             position: fixed; top: 42px !important; left: 0; right: 0;
             z-index: 1050; padding: 22px 0;
@@ -172,9 +173,6 @@
             .nav-links { display: flex; flex-direction: row; align-items: center; }
         }
 
-        /* ============================================================
-           PAGE HERO
-        ============================================================ */
         .page-hero {
             padding-top: 180px;
             padding-bottom: 64px;
@@ -212,9 +210,6 @@
             color: var(--navy-deep); box-shadow: var(--shadow-gold);
         }
 
-        /* ============================================================
-           STICKY PACKAGE ANCHOR TABS
-        ============================================================ */
         .pkg-anchor-bar {
             position: sticky; top: 100px; z-index: 900;
             background: white; border-bottom: 2px solid var(--border);
@@ -232,9 +227,6 @@
         .pkg-anchor-link.active { color: var(--navy); border-color: var(--gold); }
         .pkg-anchor-link i { margin-right: 6px; }
 
-        /* ============================================================
-           PACKAGE DETAIL HERO CARD
-        ============================================================ */
         .pkg-detail-section { padding: 80px 0; }
         .pkg-detail-section:nth-child(even) { background: var(--off-white); }
 
@@ -266,9 +258,6 @@
             transform: rotate(45deg); z-index: 10;
         }
 
-        /* ============================================================
-           PRICE BOX
-        ============================================================ */
         .price-box {
             background: white; border-radius: var(--r-lg); border: 1px solid var(--border); padding: 32px;
             box-shadow: var(--shadow-md); position: sticky; top: 160px;
@@ -299,9 +288,6 @@
         }
         .wa-cta-btn-alt:hover { border-color: var(--navy); color: var(--navy); }
 
-        /* ============================================================
-           FASILITAS GRID
-        ============================================================ */
         .facility-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
         .facility-item { background: white; border-radius: var(--r-md); padding: 20px; border: 1px solid var(--border); display: flex; align-items: flex-start; gap: 14px; transition: all .3s; }
         .facility-item:hover { border-color: var(--navy-light); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
@@ -309,9 +295,6 @@
         .facility-text h5 { font-size: .88rem; color: var(--navy); margin-bottom: 3px; }
         .facility-text p { font-size: .78rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
 
-        /* ============================================================
-           HOTEL & HIGHLIGHT BOX
-        ============================================================ */
         .hotel-card { background: white; border-radius: var(--r-lg); border: 1px solid var(--border); overflow: hidden; transition: all .3s; box-shadow: var(--shadow-sm); }
         .hotel-card:hover { border-color: var(--navy-light); box-shadow: var(--shadow-md); transform: translateY(-4px); }
         .hotel-img { width: 100%; height: 200px; object-fit: cover; }
@@ -340,9 +323,6 @@
         .pkg-section-title { font-family: var(--ff-display); font-size: 1.7rem; color: var(--navy); font-weight: 600; margin-bottom: 8px; }
         .pkg-section-label { font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
 
-        /* ============================================================
-           FOOTER
-        ============================================================ */
         .footer {box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;color: #94a3b8; padding: 72px 0 32px; font-size: .87rem; line-height: 1.75; }
         .footer h6 { color: white; font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; }
         .footer p { color: #94a3b8; }
@@ -363,16 +343,12 @@
         .wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,.55); color: white; }
         .wa-float i { font-size: 1.3rem; }
 
-        /* ============================================================
-           RESPONSIVE (Termasuk Fix Navbar Mobile dari index.html)
-        ============================================================ */
         @media (max-width: 991px) {
             .top-bar { height: auto; padding: 10px 0; }
             .top-bar-inner { flex-direction: column; gap: 8px; height: auto; padding: 0 18px; }
             .top-left, .top-right { justify-content: center; flex-wrap: wrap; gap: 10px; }
             #navbar { top: 74px !important; }
             
-            /* Mobile Navbar Menu (Identik index.html) */
             .nav-inner { padding: 0 20px; }
             #navbarMenu {
                 position: absolute; top: 100%; left: 16px; right: 16px;
@@ -441,7 +417,8 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
             <div class="nav-links me-lg-4">
                 <a href="/">Beranda</a>
-                <a href="/tentang-kami.html">Tentang</a>
+                <a href="/paket-umroh.html" class="active">Paket</a>
+                <a href="/tentang-kami.html">Tentang Kami</a>
                 <a href="/#testimoni">Testimoni</a>
                 <a href="/#faq">FAQ</a>
             </div>
@@ -1085,7 +1062,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // Sticky Navbar scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
@@ -1099,7 +1075,6 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Active anchor highlight on scroll
     const anchors = ['paket-ekonomis', 'paket-plus-turkiye', 'paket-haji-khusus'];
     const anchorLinks = document.querySelectorAll('.pkg-anchor-link');
     const tabBtns = document.querySelectorAll('.pkg-tab-btn');
